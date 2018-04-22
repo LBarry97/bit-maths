@@ -1,2 +1,2 @@
 # Bit-Maths
-Herramienta de apredizaje sobre calculos matematicos.
+Herramienta de aprendizaje sobre cálculos matemáticos.
