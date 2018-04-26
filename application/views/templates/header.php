@@ -10,4 +10,3 @@
                 <?php echo link_tag('static/bootstrap-4.1.0/css/bootstrap.min.css'); ?>
         </head>
         <body>
-                <div class="container">
