@@ -3,5 +3,8 @@
   src: url('static/font-face/Roboto-Regular.ttf');
 }
 * {
-  font-family: "Mohave", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  outline: none;
 }
