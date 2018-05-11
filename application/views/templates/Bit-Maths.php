@@ -6,14 +6,14 @@
       <p>Aprende los procedimientos, entiende por qué funcionan, comprende los conceptos para aplicarlos en problemas cotidianos.</p>
     </div>
     <div id="cont-btn-acces">
-      <a href="#" class="btn btn-success">Registrar</a>
-      <a href="#" class="btn btn-secondary">Login</a>
+      <a href="<?php echo base_url(); ?>index.php/autenticacion_usuario/registro" class="btn btn-success">Registrar</a>
+      <a href="<?php echo base_url(); ?>index.php/autenticacion_usuario/login" class="btn btn-secondary">Login</a>
     </div>
   </div>
   <div id="temas-home-cont" class="container mb-5">
     <div class="row">
       <div class="col-12 col-sm-5 order-1">
-        <?php echo img(array('src'=>'static/img/aritmetica.png', 'alt'=> 'Aritmética', 'class'=>'img-fluid')); ?>
+        <?php echo img(array('src'=>'application/static/img/aritmetica.png', 'alt'=> 'Aritmética', 'class'=>'img-fluid')); ?>
       </div>
       <div class="col-12 col-sm-7 order-2">
         <h2>Aritmética</h2>
@@ -22,7 +22,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-sm-5 order-2">
-        <?php echo img(array('src'=>'static/img/algebra.jpg', 'alt'=> 'Algebra', 'class'=>'img-fluid')); ?>
+        <?php echo img(array('src'=>'application/static/img/algebra.jpg', 'alt'=> 'Algebra', 'class'=>'img-fluid')); ?>
       </div>
       <div class="col-12 col-sm-7 order-1">
         <h2>Álgebra</h2>
@@ -31,7 +31,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-sm-5 order-1">
-        <?php echo img(array('src'=>'static/img/geometria.jpg', 'alt'=> 'Geometría', 'class'=>'img-fluid')); ?>
+        <?php echo img(array('src'=>'application/static/img/geometria.jpg', 'alt'=> 'Geometría', 'class'=>'img-fluid')); ?>
       </div>
       <div class="col-12 col-sm-7 order-2">
         <h2>Geometría</h2>
@@ -40,7 +40,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-sm-5 order-2">
-        <?php echo img(array('src'=>'static/img/calculo.jpg', 'alt'=> 'Calculo', 'class'=>'img-fluid')); ?>
+        <?php echo img(array('src'=>'application/static/img/calculo.jpg', 'alt'=> 'Calculo', 'class'=>'img-fluid')); ?>
       </div>
       <div class="col-12 col-sm-7 order-1">
         <h2>Cálculo</h2>

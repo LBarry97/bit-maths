@@ -25,7 +25,6 @@ a {
         color: #fff;
         font-size: 120px;
         font-weight: bold;
-        font-family: Helvetica;
         text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
         text-decoration: none;
     }
@@ -76,7 +75,15 @@ a {
 #main{
     width:960px;
     margin:50px auto;
-    font-family:raleway;
+
+    #login{
+        width:70%;
+        border-radius: 0;
+        border: 2px solid #ccc;
+        padding: 10px 40px 25px;
+        margin: 70px auto;
+        margin-bottom: 0;
+    }
 }
 
 span{
@@ -91,16 +98,6 @@ h2{
     padding: 30px;
 }
 
-#login{
-    width:300px;
-    float: left;
-    border-radius: 10px;
-    font-family:raleway;
-    border: 2px solid #ccc;
-    padding: 10px 40px 25px;
-    margin-top: 70px;
-}
-
 input[type=text],input[type=password], input[type=email]{
     width:99.5%;
     padding: 10px;
@@ -108,7 +105,6 @@ input[type=text],input[type=password], input[type=email]{
     border: 1px solid #ccc;
     padding-left: 5px;
     font-size: 16px;
-    font-family:raleway;
 }
 
 input[type=submit]{
@@ -119,7 +115,7 @@ input[type=submit]{
     padding: 10px;
     font-size:20px;
     cursor:pointer;
-    border-radius: 5px;
+    border-radius: 0;
     margin-bottom: 15px;
 }
 
@@ -146,7 +142,7 @@ i{
     color: cornflowerblue;
 }
 
-.error_msg{
+.error_sms{
     color:red;
     font-size: 16px;
 }

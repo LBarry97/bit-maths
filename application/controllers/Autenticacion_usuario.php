@@ -1,5 +1,5 @@
 <?php
-    session_start(); //Iniciar el gestor de session
+    //session_start(); //Iniciar el gestor de session
 
     Class Autenticacion_Usuario extends CI_Controller {
 
@@ -13,39 +13,50 @@
             $this->load->library('form_validation');
 
             // Cargar la libreria de session
-            $this->load->library('session');
+            //$this->load->library('session');
 
             // Cargar la base de datos
-            $this->load->model('login_database');
+            $this->load->model('login_database_model');
         }
 
         // Mostrar la pagina de login
-        public function index() {
-            $this->load->view('form_login');
+        public function login() {
+            $data['title'] = ucfirst('Bit-Maths | Login');
+            $this->load->helper('html');
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/form_login');
+            $this->load->view('templates/footer');
         }
 
         // Mostrar la pagina de registro
-        public function user_registration_show() {
-            $this->load->view('form_registro');
+        public function registro() {
+            $data['title'] = ucfirst('Bit-Maths | Registro');
+            $this->load->helper('html');
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/form_registro');
+            $this->load->view('templates/footer');
         }
 
         // Validar y guardar los datos de registro en la base de datos
-        public function new_user_registration() {
+        public function nuevo_registro() {
 
             // Validar la entrada de usuario
+            $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required|xss_clean');
             $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
             
             if ($this->form_validation->run() == FALSE) {
-                $this->load->view('form_registro');
+                print_r('Error de Validacion :(');
+                redirect('autenticacion_usuario/registro');
             } else {
                 $data = array(
-                    'nombre_usuario' => $this->input->post('usuario'),
-                    'email_usuario' => $this->input->post('email_usuario'),
-                    'password_usuario' => $this->input->post('password')
+                    'nombre' => $this->input->post('nombre'),
+                    'usuario' => $this->input->post('usuario'),
+                    'email' => $this->input->post('email'),
+                    'password' => $this->input->post('password')
                 );
-                $result = $this->login_database->registration_insert($data);
+                $result = $this->login_database->insertar_registro($data);
                 if ($result == TRUE) {
                     $data['sms_info'] = 'Registro finalizado correctamente !';
                     $this->load->view('form_login', $data);
@@ -57,7 +68,7 @@
         }
 
         // Validar el proceso de login del usuario
-        public function user_login_process() {
+        public function logear_usuario() {
 
             $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required|xss_clean');
             $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');

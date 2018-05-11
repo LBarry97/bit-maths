@@ -1,55 +1,49 @@
+<?php
+    if (isset($this->session->userdata['logeado'])) {
+        header("location: http://localhost/bit-maths/index.php/autenticacion_usuario/logear_usuario");
+    }
+?>
+<main id="main">
+    <div id="login">
+        <h2>Registro</h2>
+        <hr/>
+        <?php
+            echo "<div class='error_sms'>";
+            echo validation_errors();
+            echo "</div>";
+            echo form_open('autenticacion_usuario/nuevo_registro');
 
-
-<html>
-    <?php
-        if (isset($this->session->userdata['logeado'])) {
-            header("location: http://localhost/login/index.php/user_authentication/user_login_process");
-        }
-    ?>
-    <head>
-        <title>Formulario de registro</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans+Condensed:300|Raleway' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        <main id="main">
-            <div id="login">
-                <h2>Formulario de registro</h2>
-                <hr/>
-                <?php
-                    echo "<div class='error_msg'>";
-                    echo validation_errors();
-                    echo "</div>";
-                    echo form_open('user_authentication/new_user_registration');
-
-                    echo form_label('Create Username : ');
-                    echo"<br/>";
-                    echo form_input('username');
-                    echo "<div class='error_msg'>";
-                    if (isset($message_display)) {
-                        echo $message_display;
-                    }
-                    echo "</div>";
-                    echo"<br/>";
-                    echo form_label('Email : ');
-                    echo"<br/>";
-                    $data = array(
-                        'type' => 'email',
-                        'name' => 'email_value'
-                    );
-                    echo form_input($data);
-                    echo"<br/>";
-                    echo"<br/>";
-                    echo form_label('Password : ');
-                    echo"<br/>";
-                    echo form_password('password');
-                    echo"<br/>";
-                    echo"<br/>";
-                    echo form_submit('submit', 'Sign Up');
-                    echo form_close();
-                ?>
-                <a href="<?php echo base_url() ?> ">For Login Click Here</a>
-            </div>
-        </main>
-    </body>
-</html>
+            echo form_label('Nombre : ');
+            echo"<br/>";
+            echo form_input('nombre');
+            echo"<br/>";
+            echo"<br/>";
+            echo form_label('Usuario : ');
+            echo"<br/>";
+            echo form_input('usuario');
+            echo "<div class='error_sms'>";
+            if (isset($sms_info)) {
+                echo $sms_info;
+            }
+            echo "</div>";
+            echo"<br/>";
+            echo form_label('Email : ');
+            echo"<br/>";
+            $data = array(
+                'type' => 'email',
+                'name' => 'email_value'
+            );
+            echo form_input($data);
+            echo"<br/>";
+            echo"<br/>";
+            echo form_label('Password : ');
+            echo"<br/>";
+            echo form_password('password');
+            echo"<br/>";
+            echo"<br/>";
+            echo form_submit('submit', 'Registrar');
+            echo form_close();
+        ?>
+        <a href="<?php echo base_url()?>index.php/autenticacion_usuario/login">Login</a>
+    </div>
+</main>
