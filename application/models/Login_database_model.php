@@ -4,7 +4,7 @@
         // Insertar los datos de registro
         public function insertar_registro($data) {
             // Coprobar si el usuario existe o no
-            $condition = "nombre =" . "'" . $data['nombre'] . "'";
+            $condition = "usuario =" . "'" . $data['usuario'] . "'";
             $this->db->select('*');
             $this->db->from('login');
             $this->db->where($condition);
@@ -13,6 +13,7 @@
             if ($query->num_rows() == 0) {
                 // Insertar los datos en la base de datos
                 $this->db->insert('login', $data);
+                $cont = $this->db->affected_rows();
                 if ($this->db->affected_rows() > 0) {
                     return true;
                 }
@@ -24,7 +25,7 @@
         // Leer los datos con usuario y password
         public function login($data) {
 
-            $condition = "usuario =" . "'" . $data['usuario'] . "' AND " . "password_usuario =" . "'" . $data['password'] . "'";
+            $condition = "usuario =" . "'" . $data['usuario'] . "' AND " . "password =" . "'" . $data['password'] . "'";
             $this->db->select('*');
             $this->db->from('login');
             $this->db->where($condition);
