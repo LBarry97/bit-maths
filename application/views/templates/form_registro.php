@@ -3,8 +3,8 @@
         header("location: http://localhost/bit-maths/index.php/autenticacion_usuario/logear_usuario");
     }
 ?>
-<main id="main">
-    <div id="login">
+<main id="registro_main">
+    <div id="registro">
         <h2>Registro</h2>
         <hr/>
         <?php
@@ -41,7 +41,12 @@
             echo form_password('password');
             echo"<br/>";
             echo"<br/>";
-            echo form_submit('submit', 'Registrar');
+        ?>
+            <div class="d-flex justify-content-between">
+                <input class="btn" type="submit" value="Registrar" name="submit"/>
+                <a id="btn-cancelar" class="btn btn-danger" href="<?php echo base_url() ?>">Cancelar</a>
+            </div>
+        <?php
             echo form_close();
         ?>
         <a href="<?php echo base_url()?>index.php/autenticacion_usuario/login">Login</a>

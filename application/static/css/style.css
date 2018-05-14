@@ -50,6 +50,10 @@ a {
 #home-jumbotron #cont-btn-acces > *.btn-secondary {
   margin-left: 35px;
 }
+.shadow-temas:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
 #temas-home-cont h2 {
   padding-bottom: 10px;
 }
@@ -57,11 +61,15 @@ a {
   line-height: 30px;
 }
 /*Diseño de las paginas login, admin y registro:*/
-#main {
+#registro_main,
+#login_main {
   width: 960px;
   margin: 50px auto;
 }
-#main #login {
+#registro_main #login,
+#login_main #login,
+#registro_main #registro,
+#login_main #registro {
   width: 70%;
   border-radius: 0;
   border: 2px solid #ccc;
@@ -69,19 +77,24 @@ a {
   margin: 70px auto;
   margin-bottom: 0;
 }
-span {
+#registro_main span,
+#login_main span {
   color: red;
 }
-h2 {
+#registro_main h2,
+#login_main h2 {
   background-color: #FEFFED;
   text-align: center;
   border-radius: 10px 10px 0 0;
   margin: -10px -40px;
   padding: 30px;
 }
-input[type=text],
-input[type=password],
-input[type=email] {
+#registro_main input[type=text],
+#login_main input[type=text],
+#registro_main input[type=password],
+#login_main input[type=password],
+#registro_main input[type=email],
+#login_main input[type=email] {
   width: 99.5%;
   padding: 10px;
   margin-top: 8px;
@@ -89,8 +102,11 @@ input[type=email] {
   padding-left: 5px;
   font-size: 16px;
 }
-input[type=submit] {
-  width: 100%;
+#registro_main input[type=submit],
+#login_main input[type=submit],
+#registro_main #btn-cancelar,
+#login_main #btn-cancelar {
+  width: 40%;
   background-color: #FFBC00;
   color: white;
   border: 2px solid #FFCB00;
@@ -100,30 +116,42 @@ input[type=submit] {
   border-radius: 0;
   margin-bottom: 15px;
 }
-#profile {
+#registro_main #btn-cancelar,
+#login_main #btn-cancelar {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  margin-bottom: 15px;
+}
+#registro_main #profile,
+#login_main #profile {
   padding: 50px;
   border: 1px dashed grey;
   font-size: 20px;
   background-color: #DCE6F7;
 }
-#logout {
+#registro_main #logout,
+#login_main #logout {
   float: right;
   padding: 5px;
   border: dashed 1px gray;
   margin-top: -168px;
 }
-a {
+#registro_main a,
+#login_main a {
   text-decoration: none;
   color: cornflowerblue;
 }
-i {
+#registro_main i,
+#login_main i {
   color: cornflowerblue;
 }
-.error_sms {
+#registro_main .error_sms,
+#login_main .error_sms {
   color: red;
   font-size: 16px;
 }
-.message {
+#registro_main .message,
+#login_main .message {
   position: absolute;
   font-weight: bold;
   font-size: 28px;
@@ -131,4 +159,9 @@ i {
   left: 262px;
   width: 500px;
   text-align: center;
+}
+#footer {
+  position: relative;
+  bottom: 0;
+  widows: 100%;
 }

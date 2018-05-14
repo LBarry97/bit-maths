@@ -17,7 +17,7 @@ if (isset($this->session->userdata['logged_in'])) {
         echo "</div>";
     }
 ?>
-<main id="main">
+<main id="login_main">
     <div id="login">
         <h2>Login</h2>
         <hr/>
@@ -34,7 +34,10 @@ if (isset($this->session->userdata['logged_in'])) {
         <input type="text" name="usuario" id="nombre" placeholder="nombre"/><br /><br />
         <label>Password :</label>
         <input type="password" name="password" id="password" placeholder="**********"/><br/><br />
-        <input class="btn" type="submit" value=" Login " name="submit"/><br />
+        <div class="d-flex justify-content-between">
+            <input class="btn" type="submit" value=" Login " name="submit"/>
+            <a id="btn-cancelar" class="btn btn-danger" href="<?php echo base_url() ?>">Cancelar</a>
+        </div>
         <a href="<?php echo base_url() ?>index.php/autenticacion_usuario/registro">Registro</a>
         <?php echo form_close(); ?>
     </div>
