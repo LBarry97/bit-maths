@@ -46,7 +46,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <div class="card col-sm-5">
-                <a href="#" class="card-body text-center">Users</a>
+                <a href="<?php echo base_url()?>index.php/admin/usuarios" class="card-body text-center">Users</a>
             </div>
             <div class="card col-sm-5">
                 <a href="#" class="card-body text-center">Bit-Maths</a>

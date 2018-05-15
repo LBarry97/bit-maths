@@ -8,8 +8,9 @@
 ?>
 <div id="wrapper">
     <div class="container">
-        <h2>Usuarios</h2>            
-        <table class="table table-hover table-bordered">
+        <h2>Usuarios</h2>
+        <?=$tabla ?>           
+        <!-- <table class="table table-hover table-bordered">
             <thead class="thead-dark">
             <tr>
                 <th>Firstname</th>
@@ -34,6 +35,6 @@
                 <td>july@example.com</td>
             </tr>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </div>
