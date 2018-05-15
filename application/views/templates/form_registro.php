@@ -16,12 +16,20 @@
 
                 echo form_label('Nombre : ');
                 echo"<br/>";
-                echo form_input('nombre');
+                $data = array(
+                    'name' => 'nombre',
+                    'required' => 'required'
+                );
+                echo form_input($data);
                 echo"<br/>";
                 echo"<br/>";
                 echo form_label('Usuario : ');
                 echo"<br/>";
-                echo form_input('usuario');
+                $data = array(
+                    'name' => 'usuario',
+                    'required' => 'required'
+                );
+                echo form_input($data);
                 echo "<div class='error_sms'>";
                 if (isset($sms_info)) {
                     echo $sms_info;
@@ -32,14 +40,19 @@
                 echo"<br/>";
                 $data = array(
                     'type' => 'email',
-                    'name' => 'email_value'
+                    'name' => 'email_value',
+                    'required' => 'required'
                 );
                 echo form_input($data);
                 echo"<br/>";
                 echo"<br/>";
                 echo form_label('Password : ');
                 echo"<br/>";
-                echo form_password('password');
+                $data = array(
+                    'name' => 'password',
+                    'required' => 'required'
+                );
+                echo form_password($data);
                 echo"<br/>";
                 echo"<br/>";
             ?>

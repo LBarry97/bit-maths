@@ -4,13 +4,6 @@ if (isset($this->session->userdata['logged_in'])) {
 }
 ?>
 <?php
-    if (isset($logout_message)) {
-        echo "<div class='sms'>";
-        echo $sms_logout;
-        echo "</div>";
-    }
-?>
-<?php
     if (isset($sms_info)) {
         echo "<div class='sms'>";
         echo $sms_info;

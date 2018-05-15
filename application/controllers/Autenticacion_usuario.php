@@ -1,6 +1,4 @@
 <?php
-    //session_start(); //Iniciar el gestor de session
-
     Class Autenticacion_Usuario extends CI_Controller {
 
         public function __construct() {
@@ -58,13 +56,11 @@
                 $result = $this->login_database_model->insertar_registro($data);
                 if ($result == TRUE) {
                     $data['sms_info'] = 'Registro finalizado correctamente !';
-                    $data['title'] = ucfirst('Bit-Maths | Registro');
-                    $this->load->helper('html');
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('templates/form_registro');
-                    $this->load->view('templates/footer');
                 } else {
-                    $data['sms_info'] = 'El usuario ya existe!';
+                    $data['sms_info'] = 'El usuario ya existe!'; 
+                }
+
+                if(isset($data['sms_info'])){
                     $data['title'] = ucfirst('Bit-Maths | Registro');
                     $this->load->helper('html');
                     $this->load->view('templates/header', $data);
@@ -82,7 +78,11 @@
 
             if ($this->form_validation->run() == FALSE) {
                 if(isset($this->session->userdata['logeado'])){
+                    $data['title'] = ucfirst('Bit-Maths | Admin');
+                    $this->load->helper('html');
+                    $this->load->view('templates/header', $data);
                     $this->load->view('templates/pagina_admin');
+                    $this->load->view('templates/footer');
                 }else{
                     redirect('autenticacion_usuario/login');
                 }
@@ -96,20 +96,28 @@
                     $usuario = $this->input->post('usuario');
                     $result = $this->login_database_model->informacion_usuario($usuario);
                     if ($result != false) {
-                        $session_data = array(
+                        $datos_session = array(
                             'usuario' => $result[0]->usuario,
                             'email' => $result[0]->email,
                         );
 
                         // Añadir los datos del usuario en la session
-                        $this->session->set_userdata('logeado', $session_data);
+                        $this->session->set_userdata('logeado', $datos_session);
+                        $data['title'] = ucfirst('Bit-Maths | Admin');
+                        $this->load->helper('html');
+                        $this->load->view('templates/header', $data);
                         $this->load->view('templates/pagina_admin');
+                        $this->load->view('templates/footer');
                     }
                 } else {
                     $data = array(
-                    'sms_error' => 'Usuario o Contraseña inconrecto'
+                        'sms_error' => 'Usuario o Contraseña inconrecto',
+                        'title'     => 'Bit-Maths | Login'
                     );
-                    redirect('autenticacion_usuario/login', $data);
+                    $this->load->helper('html');
+                    $this->load->view('templates/header', $data);
+                    $this->load->view('templates/form_login', $data);
+                    $this->load->view('templates/footer');
                 }
             }
         }
@@ -122,8 +130,7 @@
                 'usuario' => ''
             );
             $this->session->unset_userdata('logeado', $sess_array);
-            $data['sms_info'] = 'Sesión finalizad';
-            $this->load->view('templates/form_login', $data);
+            redirect('autenticacion_usuario/login');
         }
 
     }

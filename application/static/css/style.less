@@ -73,8 +73,13 @@ a {
     line-height: 30px;
 }
 
-/*Diseño de las paginas login, admin y registro:*/
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
+/*Diseño de las paginas login, admin y registro:*/
 
 #registro_main, #login_main {
     width:960px;
@@ -126,48 +131,42 @@ a {
         border-color: #dc3545;
         margin-bottom: 15px;
     }
-    
-    #profile{
-        padding:50px;
-        border:1px dashed grey;
-        font-size:20px;
-        background-color:#DCE6F7;
-    }
-    
-    #logout{
-        float:right;
-        padding:5px;
-        border:dashed 1px gray;
-        margin-top: -168px;
-    }
-    
-    a{
-        text-decoration:none;
-        color: cornflowerblue;
-    }
-    
-    i{
-        color: cornflowerblue;
-    }
-    
-    .error_sms{
-        color:red;
-        font-size: 16px;
-    }
-        
-    .message{
-        position: absolute;
-        font-weight: bold;
-        font-size: 28px;
-        color: #6495ED;
-        left: 262px;
-        width: 500px;
-        text-align: center;
-    }
 }
 
-#footer {
+#profile {
+    padding:50px;
+    border:1px dashed grey;
+    font-size:20px;
+    background-color:#DCE6F7;
+}
+
+#logout {
+    float:right;
+    padding:5px;
+    border:dashed 1px gray;
+    margin-top: -168px;
+}
+
+a{
+    text-decoration:none;
+    color: cornflowerblue;
+}
+
+i{
+    color: cornflowerblue;
+}
+
+.error_sms{
+    color:red;
+    font-size: 16px;
+}
+    
+.sms{
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    font-weight: bold;
+    font-size: 28px;
+    color: #6495ED;
+    left: 262px;
+    width: 500px;
+    text-align: center;
 }

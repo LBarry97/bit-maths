@@ -60,6 +60,11 @@ a {
 .tema {
   line-height: 30px;
 }
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 /*Diseño de las paginas login, admin y registro:*/
 #registro_main,
 #login_main {
@@ -122,36 +127,30 @@ a {
   border-color: #dc3545;
   margin-bottom: 15px;
 }
-#registro_main #profile,
-#login_main #profile {
+#profile {
   padding: 50px;
   border: 1px dashed grey;
   font-size: 20px;
   background-color: #DCE6F7;
 }
-#registro_main #logout,
-#login_main #logout {
+#logout {
   float: right;
   padding: 5px;
   border: dashed 1px gray;
   margin-top: -168px;
 }
-#registro_main a,
-#login_main a {
+a {
   text-decoration: none;
   color: cornflowerblue;
 }
-#registro_main i,
-#login_main i {
+i {
   color: cornflowerblue;
 }
-#registro_main .error_sms,
-#login_main .error_sms {
+.error_sms {
   color: red;
   font-size: 16px;
 }
-#registro_main .message,
-#login_main .message {
+.sms {
   position: absolute;
   font-weight: bold;
   font-size: 28px;
@@ -159,9 +158,4 @@ a {
   left: 262px;
   width: 500px;
   text-align: center;
-}
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
