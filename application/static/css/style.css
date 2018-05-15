@@ -161,7 +161,7 @@ a {
   text-align: center;
 }
 #footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
-  widows: 100%;
+  width: 100%;
 }
