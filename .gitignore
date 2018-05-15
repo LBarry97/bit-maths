@@ -1,2 +1,8 @@
 # Guia de usuario
 user_guide
+
+# Config Visual Code
+.vscode/
+
+# Log
+application/logs
