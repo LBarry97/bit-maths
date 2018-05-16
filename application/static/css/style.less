@@ -141,10 +141,11 @@ a {
 }
 
 #logout {
-    float:right;
-    padding:5px;
-    border:dashed 1px gray;
-    margin-top: -168px;
+    &:parent {
+        position: relative;
+        border:dashed 1px gray;
+        right: 0;
+    }
 }
 
 a{

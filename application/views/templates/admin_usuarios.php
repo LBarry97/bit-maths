@@ -3,38 +3,35 @@
         $usuario = ($this->session->userdata['logeado']['usuario']);
         $email = ($this->session->userdata['logeado']['email']);
     } else {
-        header("location: login");
+        header("location: ../autenticacion_usuario/login");
     }
 ?>
 <div id="wrapper">
     <div class="container">
-        <h2>Usuarios</h2>
-        <?=$tabla ?>           
-        <!-- <table class="table table-hover table-bordered">
+        <h3>Tabla usuarios</h3>        
+        <table class="table table-hover table-bordered">
             <thead class="thead-dark">
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
                 <th>Email</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+                <?php
+                $len_usuarios = count($tabla_usuarios);
+                for ($i = 0; $i < $len_usuarios; $i++) {
+                ?>
+                <tr>
+                    <td><?=$tabla_usuarios[$i]['nombre']?></td>
+                    <td><?=$tabla_usuarios[$i]['usuario']?></td>
+                    <td><?=$tabla_usuarios[$i]['email']?></td>
+                </tr>
+                <?php } ?>
             </tbody>
-        </table> -->
+        </table>
     </div>
+    <footer id="footer" class="p-3 bg-dark text-white text-center">
+        <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
+    </footer>
 </div>

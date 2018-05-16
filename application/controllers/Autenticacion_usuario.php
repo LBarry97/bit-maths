@@ -4,8 +4,9 @@
         public function __construct() {
             parent::__construct();
 
-            // Cargar las librerias form helper
+            // Cargar las librerias helper
             $this->load->helper('form');
+            $this->load->helper('html');
 
             // Cargar las librerias form validation
             $this->load->library('form_validation');
@@ -20,7 +21,6 @@
         // Mostrar la pagina de login
         public function login() {
             $data['title'] = ucfirst('Bit-Maths | Login');
-            $this->load->helper('html');
             $this->load->view('templates/header', $data);
             $this->load->view('templates/form_login');
             $this->load->view('templates/footer');
@@ -29,7 +29,6 @@
         // Mostrar la pagina de registro
         public function registro() {
             $data['title'] = ucfirst('Bit-Maths | Registro');
-            $this->load->helper('html');
             $this->load->view('templates/header', $data);
             $this->load->view('templates/form_registro');
             $this->load->view('templates/footer');
@@ -62,7 +61,6 @@
 
                 if(isset($data['sms_info'])){
                     $data['title'] = ucfirst('Bit-Maths | Registro');
-                    $this->load->helper('html');
                     $this->load->view('templates/header', $data);
                     $this->load->view('templates/form_registro');
                     $this->load->view('templates/footer');
@@ -79,7 +77,6 @@
             if ($this->form_validation->run() == FALSE) {
                 if(isset($this->session->userdata['logeado'])){
                     $data['title'] = ucfirst('Bit-Maths | Admin');
-                    $this->load->helper('html');
                     $this->load->view('templates/header', $data);
                     $this->load->view('templates/pagina_admin');
                     $this->load->view('templates/footer');
@@ -104,7 +101,6 @@
                         // Añadir los datos del usuario en la session
                         $this->session->set_userdata('logeado', $datos_session);
                         $data['title'] = ucfirst('Bit-Maths | Admin');
-                        $this->load->helper('html');
                         $this->load->view('templates/header', $data);
                         $this->load->view('templates/pagina_admin');
                         $this->load->view('templates/footer');
@@ -114,7 +110,6 @@
                         'sms_error' => 'Usuario o Contraseña inconrecto',
                         'title'     => 'Bit-Maths | Login'
                     );
-                    $this->load->helper('html');
                     $this->load->view('templates/header', $data);
                     $this->load->view('templates/form_login', $data);
                     $this->load->view('templates/footer');

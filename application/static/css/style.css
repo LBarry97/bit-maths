@@ -133,11 +133,10 @@ a {
   font-size: 20px;
   background-color: #DCE6F7;
 }
-#logout {
-  float: right;
-  padding: 5px;
+#logout:parent {
+  position: relative;
   border: dashed 1px gray;
-  margin-top: -168px;
+  right: 0;
 }
 a {
   text-decoration: none;
