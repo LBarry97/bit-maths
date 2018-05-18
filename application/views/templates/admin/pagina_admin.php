@@ -7,21 +7,6 @@
     }
 ?>
 <div id="wrapper">
-    <div id="profile">
-        <?php
-            echo "Hello <b id='welcome'><i>" . $usuario . "</i> !</b>";
-            echo "<br/>";
-            echo "<br/>";
-            echo "Welcome to Admin Page";
-            echo "<br/>";
-            echo "<br/>";
-            echo "Your Username is " . $usuario;
-            echo "<br/>";
-            echo "Your Email is " . $email;
-            echo "<br/>";
-        ?>
-    </div>
-    <br/>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Bit-Maths | Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -29,16 +14,11 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item hidden">
                     <a class="nav-link" href="#">Ad</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
+                <li id="logout" class="nav-item btn btn-danger">
                     <a class="nav-link" href="logout">Logout</a>
                 </li>    
             </ul>
@@ -46,7 +26,7 @@
     </nav>
     <br>
     <div class="container">
-        <div class="row justify-content-between">
+        <div id="admin-home" class="row justify-content-between">
             <div class="card col-sm-5">
                 <a href="<?=site_url('admin/usuarios')?>" class="card-body text-center">Users</a>
             </div>

@@ -75,14 +75,7 @@
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
-                if(isset($this->session->userdata['logeado'])){
-                    $data['title'] = ucfirst('Bit-Maths | Admin');
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('templates/pagina_admin');
-                    $this->load->view('templates/footer');
-                }else{
-                    redirect('autenticacion_usuario/login');
-                }
+                redirect('autenticacion_usuario/login');
             } else {
                 $data = array(
                     'usuario' => $this->input->post('usuario'),
@@ -100,10 +93,17 @@
 
                         // Añadir los datos del usuario en la session
                         $this->session->set_userdata('logeado', $datos_session);
-                        $data['title'] = ucfirst('Bit-Maths | Admin');
-                        $this->load->view('templates/header', $data);
-                        $this->load->view('templates/pagina_admin');
-                        $this->load->view('templates/footer');
+                        if($result[0]->admin == TRUE){
+                            $data['title'] = ucfirst('Bit-Maths | Admin');
+                            $this->load->view('templates/header', $data);
+                            $this->load->view('templates/admin/pagina_admin');
+                            $this->load->view('templates/footer');
+                        }else{
+                            $data['title'] = ucfirst('Bit-Maths');
+                            $this->load->view('templates/header', $data);
+                            $this->load->view('templates/bit-maths/home_users');
+                            $this->load->view('templates/footer');
+                        }
                     }
                 } else {
                     $data = array(

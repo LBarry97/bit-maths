@@ -1,9 +1,4 @@
 <?php
-if (isset($this->session->userdata['logged_in'])) {
-    header("location: http://localhost/bit-maths/index.php/autenticacion_usuario/logear_usuario");
-}
-?>
-<?php
     if (isset($sms_info)) {
         echo "<div class='sms'>";
         echo $sms_info;

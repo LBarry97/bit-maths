@@ -5,6 +5,7 @@
         public function list_usuarios() {
             $this->db->select('*');
             $this->db->from('login');
+            $this->db->where('admin=0');
             $this->db->order_by('nombre', 'DESC');
             return $this->db->get()->result_array();
         }

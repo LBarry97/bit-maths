@@ -51,6 +51,6 @@
     </div>
   </main>
   <footer class="p-3 bg-dark text-white text-center">
-    <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
+    <em>&copy;2018 Bit-Maths By Lansana Barry Sow [lansanabarry97@gmail.com]</em>
   </footer>
 </div>

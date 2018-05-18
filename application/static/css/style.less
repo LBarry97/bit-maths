@@ -5,15 +5,15 @@
 
 * {
     font-family: "Roboto", sans-serif;
+    border-radius: 0 !important;
 }
 
 a {
     outline: none;
 }
 
-.row {
-    border-bottom: 1px solid #A9A9A9;
-    padding: 50px 0;
+.hidden {
+    visibility: hidden;
 }
 
 #home-jumbotron {
@@ -52,15 +52,18 @@ a {
         height: 70px;
         font-size: 25px;
         line-height: 55px;
-        border-radius: 0;
         &.btn-secondary {
             margin-left: 35px;
         }
     }
 }
 
-.shadow-temas:hover {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+.row.shadow-temas {
+    &:hover{
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    }
+    border-bottom: 1px solid #A9A9A9;
+    padding: 50px 0;
 }
 
 #temas-home-cont {
@@ -71,6 +74,19 @@ a {
 
 .tema {
     line-height: 30px;
+}
+
+#nav-home {
+    max-width: 20%;
+    .nav-item{
+        border: black 1px solid;
+        border-bottom: 0;
+        background-color: #343a40;
+        color: white;
+        &:last-child{
+            border-bottom: black 1px solid; 
+        }
+    }
 }
 
 #footer {
@@ -87,7 +103,6 @@ a {
 
     #login, #registro{
         width:70%;
-        border-radius: 0;
         border: 2px solid #ccc;
         padding: 10px 40px 25px;
         margin: 70px auto;
@@ -100,7 +115,6 @@ a {
     h2{
         background-color: #FEFFED;
         text-align:center;
-        border-radius: 10px 10px 0 0;
         margin: -10px -40px;
         padding: 30px;
     }
@@ -122,7 +136,6 @@ a {
         padding: 10px;
         font-size:20px;
         cursor:pointer;
-        border-radius: 0;
         margin-bottom: 15px;
     }
 
@@ -133,19 +146,10 @@ a {
     }
 }
 
-#profile {
-    padding:50px;
-    border:1px dashed grey;
-    font-size:20px;
-    background-color:#DCE6F7;
-}
-
 #logout {
-    &:parent {
-        position: relative;
-        border:dashed 1px gray;
-        right: 0;
-    }
+    position: absolute;
+    right: 10px;
+    padding: 0;
 }
 
 a{
@@ -170,4 +174,9 @@ i{
     left: 262px;
     width: 500px;
     text-align: center;
+}
+
+#admin-home {
+    height: 97px;
+    line-height: 50px;
 }

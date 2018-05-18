@@ -22,7 +22,7 @@
                 'tabla_usuarios' => $this->admin_model->list_usuarios(),
             );
             $this->load->view('templates/header', $data);
-            $this->load->view('templates/admin_usuarios', $data);
+            $this->load->view('templates/admin/admin_usuarios', $data);
             $this->load->view('templates/footer');
         }
     }
