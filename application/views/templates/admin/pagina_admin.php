@@ -31,7 +31,7 @@
                 <a href="<?=site_url('admin/usuarios')?>" class="card-body text-center">Users</a>
             </div>
             <div class="card col-sm-5">
-                <a href="#" class="card-body text-center">Bit-Maths</a>
+                <a href="<?=site_url('admin/paginas')?>" class="card-body text-center">Bit-Maths</a>
             </div>
         </div>
     </div>
