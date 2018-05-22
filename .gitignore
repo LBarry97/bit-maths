@@ -9,3 +9,6 @@ application/logs
 
 #Prepros
 prepros-6.config
+
+# Config database
+config/database.php
