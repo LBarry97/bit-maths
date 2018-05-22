@@ -7,8 +7,8 @@
         <p>Aprende los procedimientos, entiende por qué funcionan, comprende los conceptos para aplicarlos en problemas cotidianos.</p>
       </div>
       <div id="cont-btn-acces">
-        <a href="<?php echo base_url(); ?>index.php/autenticacion_usuario/registro" class="btn btn-success">Registrar</a>
-        <a href="<?php echo base_url(); ?>index.php/autenticacion_usuario/login" class="btn btn-secondary">Login</a>
+        <a href="<?=site_url('autenticacion_usuario/registro')?>" class="btn btn-success">Registrar</a>
+        <a href="<?=site_url('autenticacion_usuario/login')?>" class="btn btn-secondary">Login</a>
       </div>
     </div>
     <div id="temas-home-cont" class="container mb-5">
@@ -51,6 +51,6 @@
     </div>
   </main>
   <footer class="p-3 bg-dark text-white text-center">
-    <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
+    <em>&copy;2018 Bit-Maths By Lansana Barry Sow [lansanabarry97@gmail.com]</em>
   </footer>
 </div>

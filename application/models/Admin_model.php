@@ -2,16 +2,12 @@
     Class Admin_model extends CI_Model {
 
         // Coger los usuarios de la base de datos
-        public function lis_usuarios($usuario) {
+        public function list_usuarios() {
             $this->db->select('*');
             $this->db->from('login');
-            $query = $this->db->get();
-
-            if ($query->num_rows() > 0) {
-                return $query->result();
-            } else {
-                return false;
-            }
+            $this->db->where('admin=0');
+            $this->db->order_by('nombre', 'DESC');
+            return $this->db->get()->result_array();
         }
     }
 ?>

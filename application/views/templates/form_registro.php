@@ -1,8 +1,3 @@
-<?php
-    if (isset($this->session->userdata['logeado'])) {
-        header("location: http://localhost/bit-maths/index.php/autenticacion_usuario/logear_usuario");
-    }
-?>
 <div id="wrapper">
     <main id="registro_main">
         <div id="registro">
@@ -58,12 +53,12 @@
             ?>
                 <div class="d-flex justify-content-between">
                     <input class="btn" type="submit" value="Registrar" name="submit"/>
-                    <a id="btn-cancelar" class="btn btn-danger" href="<?php echo base_url() ?>">Cancelar</a>
+                    <a id="btn-cancelar" class="btn btn-danger" href="<?=site_url('')?>">Cancelar</a>
                 </div>
             <?php
                 echo form_close();
             ?>
-            <a href="<?php echo base_url()?>index.php/autenticacion_usuario/login">Login</a>
+            <a href="<?=site_url('autenticacion_usuario/login')?>">Login</a>
         </div>
     </main>
     <footer id="footer" class="p-3 bg-dark text-white text-center">
