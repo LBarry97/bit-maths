@@ -1,2 +1,11 @@
-#User Guide
+# User Guide
 user_guide/
+
+# Visual Code
+.vscode
+
+# Prepros
+prepros-6.config
+
+# Logs
+application/logs/
