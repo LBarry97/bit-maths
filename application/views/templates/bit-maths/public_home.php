@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="wrapper">
   <main>
     <div id="home-jumbotron" class="jumbotron text-center">
       <h1 id="my_logo">Bit-Maths</h1>
@@ -50,7 +50,3 @@
       </div>
     </div>
   </main>
-  <footer class="p-3 bg-dark text-white text-center">
-    <em>&copy;2018 Bit-Maths By Lansana Barry Sow [lansanabarry97@gmail.com]</em>
-  </footer>
-</div>

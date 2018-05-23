@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="wrapper">
     <main id="registro_main">
         <div id="registro">
             <h2>Registro</h2>
@@ -61,7 +61,3 @@
             <a href="<?=site_url('autenticacion_usuario/login')?>">Login</a>
         </div>
     </main>
-    <footer id="footer" class="p-3 bg-dark text-white text-center">
-        <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
-    </footer>
-</div>

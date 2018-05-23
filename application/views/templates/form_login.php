@@ -5,7 +5,7 @@
         echo "</div>";
     }
 ?>
-<div id="wrapper">
+<div class="wrapper">
     <main id="login_main">
         <div id="login">
             <h2>Login</h2>
@@ -31,8 +31,4 @@
             <?php echo form_close(); ?>
         </div>
     </main>
-    <footer id="footer" class="p-3 bg-dark text-white text-center">
-        <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
-    </footer>
-</div>
 
