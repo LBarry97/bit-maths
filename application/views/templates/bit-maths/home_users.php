@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="wrapper">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Bit-Maths</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -33,7 +33,3 @@
             <a class="nav-link" href="#">Cálculo</a>
         </li>
     </ul>
-    <footer id="footer" class="p-3 bg-dark text-white text-center">
-        <em>&copy;2018 Lansana Barry Sow [lansanabarry97@gmail.com]</em>
-    </footer>
-</div>

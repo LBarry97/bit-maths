@@ -6,7 +6,7 @@
         header("location: ../autenticacion_usuario/login");
     }
 ?>
-<div id="wrapper">
+<div class="wrapper">
     <div class="container">
         <h3>Tabla usuarios</h3>        
         <table class="table table-hover table-bordered">
@@ -31,7 +31,3 @@
             </tbody>
         </table>
     </div>
-    <footer id="footer" class="p-3 bg-dark text-white text-center">
-        <em>&copy;2018 Bit-Maths By Lansana Barry Sow [lansanabarry97@gmail.com]</em>
-    </footer>
-</div>
