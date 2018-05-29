@@ -93,7 +93,7 @@
 
                         // Añadir los datos del usuario en la session
                         $this->session->set_userdata('logeado', $datos_session);
-                        if($result[0]->admin == TRUE){
+                        if($result[0]->entorno == TRUE){
                             $data['title'] = ucfirst('Bit-Maths | Admin');
                             $this->load->view('templates/header', $data);
                             $this->load->view('templates/admin/pagina_admin');

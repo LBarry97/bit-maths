@@ -6,13 +6,13 @@
             // Coprobar si el usuario existe o no
             $condition = "usuario =" . "'" . $data['usuario'] . "'";
             $this->db->select('*');
-            $this->db->from('login');
+            $this->db->from('usuario');
             $this->db->where($condition);
             $this->db->limit(1);
             $query = $this->db->get();
             if ($query->num_rows() == 0) {
                 // Insertar los datos en la base de datos
-                $this->db->insert('login', $data);
+                $this->db->insert('usuario', $data);
                 $cont = $this->db->affected_rows();
                 if ($this->db->affected_rows() > 0) {
                     return true;
@@ -27,7 +27,7 @@
 
             $condition = "usuario =" . "'" . $data['usuario'] . "' AND " . "password =" . "'" . $data['password'] . "'";
             $this->db->select('*');
-            $this->db->from('login');
+            $this->db->from('usuario');
             $this->db->where($condition);
             $this->db->limit(1);
             $query = $this->db->get();
@@ -44,7 +44,7 @@
 
             $condition = "usuario =" . "'" . $usuario . "'";
             $this->db->select('*');
-            $this->db->from('login');
+            $this->db->from('usuario');
             $this->db->where($condition);
             $this->db->limit(1);
             $query = $this->db->get();

@@ -12,6 +12,3 @@ prepros-6.config
 
 # Config database
 config/database.php
-
-# Config base
-config/config.php
