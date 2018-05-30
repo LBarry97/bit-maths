@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "Roboto";
+  src: url('static/font-face/Roboto-Regular.ttf');
+}
+* {
+  font-family: "Roboto", sans-serif;
+  border-radius: 0 !important;
+}
+a {
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.footer,
+.push {
+  height: 50px;
+}
+.hidden {
+  visibility: hidden;
+}
+#home-jumbotron {
+  background-image: url("../img/home-bg.jpg");
+  background-size: cover;
+  height: 500px;
+}
+#home-jumbotron #my_logo {
+  color: #fff;
+  font-size: 120px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+#home-jumbotron #description-home {
+  border-style: double;
+  border-width: 4px;
+  width: 75%;
+  margin: auto;
+}
+#home-jumbotron #description-home:hover {
+  background-color: white;
+}
+#home-jumbotron h4,
+#home-jumbotron p {
+  color: #333333;
+}
+#home-jumbotron #cont-btn-acces {
+  margin-top: 50px;
+}
+#home-jumbotron #cont-btn-acces > * {
+  width: 45%;
+  height: 70px;
+  font-size: 25px;
+  line-height: 55px;
+}
+#home-jumbotron #cont-btn-acces > *.btn-secondary {
+  margin-left: 35px;
+}
+.row.shadow-temas {
+  border-bottom: 1px solid #A9A9A9;
+  padding: 50px 0;
+}
+.row.shadow-temas:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+#temas-home-cont h2 {
+  padding-bottom: 10px;
+}
+.tema {
+  line-height: 30px;
+}
+#nav-home {
+  max-width: 20%;
+}
+#nav-home .nav-item {
+  border: black 1px solid;
+  border-bottom: 0;
+  background-color: #343a40;
+  color: white;
+}
+#nav-home .nav-item:last-child {
+  border-bottom: black 1px solid;
+}
+#admin-navbar {
+  margin-bottom: 50px;
+}
+.style-card {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+#registro_main,
+#login_main {
+  width: 960px;
+  margin: 50px auto;
+}
+#registro_main #login,
+#login_main #login,
+#registro_main #registro,
+#login_main #registro {
+  width: 70%;
+  border: 2px solid #ccc;
+  padding: 10px 40px 25px;
+  margin: 70px auto;
+  margin-bottom: 0;
+}
+#registro_main span,
+#login_main span {
+  color: red;
+}
+#registro_main h2,
+#login_main h2 {
+  background-color: #FEFFED;
+  text-align: center;
+  margin: -10px -40px;
+  padding: 30px;
+}
+#registro_main input[type=text],
+#login_main input[type=text],
+#registro_main input[type=password],
+#login_main input[type=password],
+#registro_main input[type=email],
+#login_main input[type=email] {
+  width: 99.5%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  font-size: 16px;
+}
+#registro_main input[type=submit],
+#login_main input[type=submit],
+#registro_main #btn-cancelar,
+#login_main #btn-cancelar {
+  width: 40%;
+  background-color: #FFBC00;
+  color: white;
+  border: 2px solid #FFCB00;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+#registro_main #btn-cancelar,
+#login_main #btn-cancelar {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  margin-bottom: 15px;
+}
+#logout {
+  position: absolute;
+  right: 10px;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.error_sms {
+  color: red;
+  font-size: 16px;
+}
+.sms {
+  position: absolute;
+  font-weight: bold;
+  font-size: 28px;
+  color: #6495ED;
+  left: 262px;
+  width: 500px;
+  text-align: center;
+}
+#admin-home {
+  height: 97px;
+  line-height: 50px;
+}
