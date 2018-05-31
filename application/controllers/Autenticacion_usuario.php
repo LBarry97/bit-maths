@@ -40,7 +40,7 @@
             // Validar la entrada de usuario
             $this->form_validation->set_rules('nombre', 'Nombre', 'trim|required');
             $this->form_validation->set_rules('usuario', 'Usuario', 'trim|required');
-            $this->form_validation->set_rules('email_value', 'Email', 'trim|required');
+            $this->form_validation->set_rules('email_value', 'Email', 'trim');
             $this->form_validation->set_rules('password', 'Password', 'trim|required');
             
             if ($this->form_validation->run() == FALSE) {
@@ -93,7 +93,7 @@
 
                         // Añadir los datos del usuario en la session
                         $this->session->set_userdata('logeado', $datos_session);
-                        if($result[0]->entorno == TRUE){
+                        if($result[0]->admin == TRUE){
                             $data['title'] = ucfirst('Bit-Maths | Admin');
                             $this->load->view('templates/header', $data);
                             $this->load->view('templates/admin/pagina_admin');
