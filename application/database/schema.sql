@@ -50,7 +50,7 @@ CREATE TABLE `usuario` (
 );
 
 /**
-* Tabla de relacion entre los usarios y el temarios cursado
+* Tabla de relacion entre los usarios y el temario que han cursado
 */
 CREATE TABLE `usuario_tema` (
     `id_usuario` INT(11) NOT NULL,
