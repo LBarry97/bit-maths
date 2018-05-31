@@ -4,49 +4,58 @@ CREATE DATABASE `bit-maths`;
 
 USE `bit-maths`;
 
-
 /**
-* Tabla de entorno: Admin y Alumno:
+* Tabla de las diferentes ramas matematicas
 */
-CREATE TABLE `entorno` (
-	`id` INT(11) NOT NULL AUTO_INCREMENT,
-    `nombre` VARCHAR(255) NOT NULL,
-    `accion` VARCHAR(255) NOT NULL,
-    PRIMARY KEY (`id`)
-);
-
-
-/**
-* Tabla de usuarios
-*/
-CREATE TABLE `usuario` (
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `nombre` VARCHAR(255) NOT NULL,
-    `usuario` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-    `password` VARCHAR(255) NOT NULL,
-    `entorno` INT(11),
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`entorno`) REFERENCES `entorno`(`id`) 
-);
-
-/**
-* Tabla de las vistas
-*/
-CREATE TABLE `vista` (
+CREATE TABLE `rama` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `nombre` VARCHAR(100) NOT NULL,
-    `descripcion` VARCHAR(100) NOT NULL,
     `contenido` TEXT NOT NULL,
     PRIMARY KEY (`id`)
 );
 
 /**
-* Tabla de la relacion de las vistas y los entornos
+* Tabla del temario de las diferentes ramas
 */
-CREATE TABLE `vista_entorno` (
-    `id_vista` INT(11) NOT NULL,
-    `id_entorno` INT(11) NOT NULL,
-    CONSTRAINT `pk_vista_entorno` PRIMARY KEY (`id_vista`,`id_entorno`)
+CREATE TABLE `tema` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `contenido` TEXT NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
+/**
+* Tabla de relacion entre las ramas y los temarios
+*/
+CREATE TABLE `rama_tema` (
+    `id_rama` INT(11) NOT NULL,
+    `id_tema` INT(11) NOT NULL,
+    FOREIGN KEY (`id_rama`) REFERENCES `rama`(`id`),
+    FOREIGN KEY (`id_tema`) REFERENCES `tema`(`id`),
+    CONSTRAINT `pk_rama_tema` PRIMARY KEY (`id_rama`,`id_tema`)
+);
+
+/**
+* Tabla de usuarios
+* Alumno -> admin=0 y Administrador -> admin=1
+*/
+CREATE TABLE `usuario` (
+    `id` INT(11) NOT NULL AUTO_INCREMENT,
+    `nombre` VARCHAR(255) NOT NULL,
+    `usuario` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255),
+    `password` VARCHAR(255) NOT NULL,
+    `admin` TINYINT(1) NOT NULL,
+    PRIMARY KEY (`id`)
+    
+);
+
+/**
+* Tabla de relacion entre los usarios y el temarios cursado
+*/
+CREATE TABLE `usuario_tema` (
+    `id_usuario` INT(11) NOT NULL,
+    `id_tema` INT(11) NOT NULL,
+    FOREIGN KEY (`id_usuario`) REFERENCES `usuario`(`id`),
+    FOREIGN KEY (`id_tema`) REFERENCES `tema`(`id`),
+    CONSTRAINT `pk_usuario_tema` PRIMARY KEY (`id_usuario`,`id_tema`)
+);
