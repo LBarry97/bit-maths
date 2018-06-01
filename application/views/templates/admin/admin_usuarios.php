@@ -1,14 +1,14 @@
 <?php
-    if (isset($this->session->userdata['logeado'])) {
+    if (isset($this->session->userdata['logeado']) && $this->session->userdata['logeado']['admin'] == "1") {
         $usuario = ($this->session->userdata['logeado']['usuario']);
-        $email = ($this->session->userdata['logeado']['email']);
     } else {
         header("location: ../autenticacion_usuario/login");
     }
 ?>
-<div class="wrapper">
+<br>
+<br>
     <div class="container">
-        <h3>Tabla usuarios</h3>        
+        <h3>Tabla usuarios:</h3>        
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
             <tr>

@@ -21,7 +21,7 @@
                 'title' => ucfirst('Bit-Maths | Usuarios'),
                 'tabla_usuarios' => $this->admin_model->list_usuarios(),
             );
-            $this->load->view('templates/header', $data);
+            $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/admin_usuarios', $data);
             $this->load->view('templates/footer');
         }
@@ -31,7 +31,7 @@
             $data = array(
                 'title' => ucfirst('Bit-Maths Admin | Paginas'),
             );
-            $this->load->view('templates/header',$data);
+            $this->load->view('templates/admin/header',$data);
             $this->load->view('templates/admin/admin_paginas');
             $this->load->view('templates/footer');
         }
