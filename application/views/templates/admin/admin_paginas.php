@@ -8,23 +8,6 @@
 <br>
 <br>
     <div class="container">
-        <div class="card bg-secondary text-white style-card">
-            <a href="<?=site_url('admin/pagina/home_publica')?>" class="card-body text-center">Home Publica</a>
-        </div>
-        <div class="row justify-content-between style-card">
-            <div class="card col-sm-5 bg-secondary text-white style-card">
-                <a href="<?=site_url('admin/usuarios')?>" class="card-body text-center">Aritmética</a>
-            </div>
-            <div class="card col-sm-5 bg-secondary text-white style-card">
-                <a href="<?=site_url('admin/paginas')?>" class="card-body text-center">Álgebra</a>
-            </div>
-        </div>
-        <div class="row justify-content-between style-card">
-            <div class="card col-sm-5 bg-secondary text-white style-card">
-                <a href="<?=site_url('admin/usuarios')?>" class="card-body text-center">Geometría</a>
-            </div>
-            <div class="card col-sm-5 bg-secondary text-white style-card">
-                <a href="<?=site_url('admin/paginas')?>" class="card-body text-center">Cálculo</a>
-            </div>
-        </div>
     </div>
+    <script src="<?php echo base_url(); ?>application/static/js/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>application/static/js/admin_paginas.js"></script>

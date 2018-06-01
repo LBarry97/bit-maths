@@ -12,7 +12,7 @@
         </head>
         <body>
                 <div class="wrapper">
-                        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                        <nav id="navbar_admin" class="navbar navbar-expand-md bg-dark navbar-dark">
                                 <a class="navbar-brand" href="<?=site_url('autenticacion_usuario/admin')?>">Admin Home</a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                                 <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
                                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul class="navbar-nav">
                                         <li class="nav-item hidden">
-                                        <a class="nav-link" href="#">Ad</a>
+                                        <a class="nav-link" href="#">Relleno</a>
                                         </li>
                                         <li id="logout" class="nav-item btn btn-danger">
                                         <a class="nav-link" href="logout">Logout</a>
