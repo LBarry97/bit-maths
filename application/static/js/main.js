@@ -4,6 +4,8 @@ $(document).ready(function(){
     var hostname = location.hostname;
     var url = "";
     
+    var test = window.location.hostname;
+
     if(hostname = "localhost"){
         url = protocol+"//"+hostname+WORK_DIR+"/bit-maths"
     }else{
