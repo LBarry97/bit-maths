@@ -35,8 +35,7 @@
                 echo"<br/>";
                 $data = array(
                     'type' => 'email',
-                    'name' => 'email_value',
-                    'required' => 'required'
+                    'name' => 'email_value'
                 );
                 echo form_input($data);
                 echo"<br/>";
