@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var WORK_DIR = "/mycode";
     var protocol = location.protocol;
-    var hostname = location.hostname;
+    var hostname = window.location.hostname;;
     var url = "";
     
     if(hostname = "localhost"){
