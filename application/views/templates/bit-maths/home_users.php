@@ -1,3 +1,10 @@
+<?php
+    if (isset($this->session->userdata['logeado'])) {
+        $usuario = ($this->session->userdata['logeado']['usuario']);
+    } else {
+        header("location: ../autenticacion_usuario/login");
+    }
+?>
 <div class="wrapper">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Bit-Maths</a>

@@ -94,15 +94,9 @@
                         // Añadir los datos del usuario en la session
                         $this->session->set_userdata('logeado', $datos_session);
                         if($result[0]->admin == TRUE){
-                            $data['title'] = ucfirst('Bit-Maths | Admin');
-                            $this->load->view('templates/admin/header', $data);
-                            $this->load->view('templates/admin/pagina_admin');
-                            $this->load->view('templates/footer');
+                            redirect('autenticacion_usuario/admin');
                         }else{
-                            $data['title'] = ucfirst('Bit-Maths');
-                            $this->load->view('templates/header', $data);
-                            $this->load->view('templates/bit-maths/home_users');
-                            $this->load->view('templates/footer');
+                            redirect('autenticacion_usuario/formacion');
                         }
                     }
                 } else {
@@ -117,11 +111,19 @@
             }
         }
 
-        // Logout en la pagina admin
+        // Acceder en la pagina admin
         public function admin() {
             $data['title'] = ucfirst('Bit-Maths | Admin');
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/pagina_admin');
+            $this->load->view('templates/footer');
+        }
+
+        // Acceder en la pagina de formacion
+        public function formacion() {
+            $data['title'] = ucfirst('Bit-Maths');
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/bit-maths/home_users');
             $this->load->view('templates/footer');
         }
 
@@ -130,7 +132,8 @@
 
             // Borrar los datos de session
             $sess_array = array(
-                'usuario' => ''
+                'usuario' => '',
+                'admin' => ''
             );
             $this->session->unset_userdata('logeado', $sess_array);
             redirect('autenticacion_usuario/login');

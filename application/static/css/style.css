@@ -88,8 +88,12 @@ body {
 #nav-home .nav-item:last-child {
   border-bottom: black 1px solid;
 }
-#admin-navbar {
-  margin-bottom: 50px;
+#navbar_admin {
+  padding: 0;
+}
+#navbar_admin .active {
+  background-color: #4CAF50;
+  color: white;
 }
 .style-card {
   margin: 0;
@@ -156,8 +160,9 @@ body {
 }
 #logout {
   position: absolute;
-  right: 10px;
-  padding: 0;
+  right: 0;
+  top: 0;
+  padding: 6px;
 }
 a {
   text-decoration: none;
