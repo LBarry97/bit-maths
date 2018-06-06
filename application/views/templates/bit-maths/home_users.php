@@ -40,3 +40,5 @@
             <a class="nav-link" href="#">Cálculo</a>
         </li>
     </ul>
+    <script src="<?php echo base_url(); ?>application/static/js/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>application/static/js/formacion.js"></script>

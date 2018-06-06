@@ -11,6 +11,7 @@
             $this->load->model('admin_model');
 
             // Cargar librerias de ayuda
+            $this->load->helper('form');
             $this->load->helper('html');
             $this->load->helper('url');
         }

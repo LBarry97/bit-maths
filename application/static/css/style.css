@@ -95,6 +95,16 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+#navbar_admin .active:hover {
+  opacity: 0.7;
+}
+#btn-form-admin .btn {
+  width: 200px;
+  height: 55px;
+  line-height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .style-card {
   margin: 0;
   margin-bottom: 20px;
