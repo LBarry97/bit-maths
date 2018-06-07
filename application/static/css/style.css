@@ -94,7 +94,7 @@ body {
 #nav-home .list-group > .list-group-item:hover {
   background-color: #6c757d;
 }
-#aula-formacion {
+.wrapper.style {
   background-color: #edd9c0;
 }
 #navbar_admin {

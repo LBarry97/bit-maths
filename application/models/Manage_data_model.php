@@ -21,7 +21,7 @@
         // Coger id de los temas de la rama
         public function getTemasRama($id_rama) {
             $condition = "id_rama =" . "'" . $id_rama . "'";
-            $this->db->select('id_tema');
+            $this->db->select('id_rama, id_tema');
             $this->db->from('rama_tema');
             $this->db->where($condition);
             return $this->db->get()->result_array();

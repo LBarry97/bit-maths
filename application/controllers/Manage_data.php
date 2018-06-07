@@ -63,13 +63,19 @@
         public function temas_rama($id_rama) {
             $result = $this->manage_data_model->getTemasRama($id_rama);
             $lenResult = count($result);
-            $listIdTemas = [];
+            $listIdTemas = "";
+            $responseJSON = "";
 
             foreach ($result as $i => $value) {
-                array_push($listIdTemas, $value['id_tema']);
+                if($i != $lenResult - 1){
+                    $listIdTemas = $listIdTemas.$value['id_tema'].",";
+                }else{
+                    $listIdTemas = $listIdTemas.$value['id_tema'];
+                }
             }
-
-            echo json_encode($listIdTemas);
+            $responseJSON = '{"rama":"'.$value['id_rama'].'","temas":"'.$listIdTemas.'"}';
+            $responseJSON = "[".$responseJSON."]";
+            echo $responseJSON;
             
         }
 

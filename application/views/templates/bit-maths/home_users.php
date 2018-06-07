@@ -5,7 +5,7 @@
         header("location: ../autenticacion_usuario/login");
     }
 ?>
-<div class="wrapper">
+<div class="wrapper style">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="#">Bit-Maths</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -28,27 +28,15 @@
             <ul id="nav-home" class="col-sm-3 nav flex-column nav-pills">
                 <li class="nav-item" data-toggle="collapse" data-target="#temas-artimetica">Aritmética</li>
                 <ul id="temas-artimetica" class="list-group collapse show">
-                    <li class="list-group-item">Tema 1</li>
-                    <li class="list-group-item">Tema 2</li>
-                    <li class="list-group-item">Tema 3</li>
                 </ul>
                 <li class="nav-item" data-toggle="collapse" data-target="#temas-algebra">Álgebra</li>
                 <ul id="temas-algebra" class="list-group collapse">
-                    <li class="list-group-item">Tema 1</li>
-                    <li class="list-group-item">Tema 2</li>
-                    <li class="list-group-item">Tema 3</li>
                 </ul>
                 <li class="nav-item" data-toggle="collapse" data-target="#temas-geometria">Geometría</li>
                 <ul id="temas-geometria" class="list-group collapse">
-                    <li class="list-group-item">Tema 1</li>
-                    <li class="list-group-item">Tema 2</li>
-                    <li class="list-group-item">Tema 3</li>
                 </ul>
                 <li class="nav-item" data-toggle="collapse" data-target="#temas-calculo">Cálculo</li>
                 <ul id="temas-calculo" class="list-group collapse">
-                    <li class="list-group-item">Tema 1</li>
-                    <li class="list-group-item">Tema 2</li>
-                    <li class="list-group-item">Tema 3</li>
                 </ul>
             </ul>
             <div id="content-tema" class="col-sm-9">

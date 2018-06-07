@@ -24,7 +24,7 @@
             <div id="btn-form-admin" class="d-flex justify-content-between">
                 <input class="btn btn-success" type="submit" value="Guardar" name="submit"/>
                 <a class="btn btn-secondary" href="<?=site_url('')?>">Nevo Tema</a>
-                <a id="btn-cancelar" class="btn btn-danger" href="<?=site_url('')?>">Cancelar</a>
+                <a id="btn-cancelar" class="btn btn-danger" href="<?=site_url('autenticacion_usuario/admin')?>">Cancelar</a>
             </div>
         </div>
         <?php

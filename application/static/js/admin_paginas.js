@@ -62,7 +62,7 @@ $(document).ready(function(){
         $("#accordion").text("");
 
         $.getJSON(url+"/index.php/manage_data/temas_rama/"+indice, function(data){
-            makeTemas(data);
+            makeTemas(data[0].temas.split(","));
         });
     }
 
