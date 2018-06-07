@@ -72,5 +72,19 @@
             echo json_encode($listIdTemas);
             
         }
+
+        // Devolver el contenido de un tema
+        public function tema_content($id_tema) {
+            $result = $this->manage_data_model->getContentTema($id_tema);
+            $lenResult = count($result);
+            $responseJSON = "";
+
+            foreach ($result as $i => $value) {
+                $responseJSON = $responseJSON.$value['contenido'];
+            }
+
+            $responseJSON = "[".$responseJSON."]";
+            echo $responseJSON;
+        }
     }
 ?>

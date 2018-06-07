@@ -26,5 +26,15 @@
             $this->db->where($condition);
             return $this->db->get()->result_array();
         }
+
+        // Coger un tema
+        public function getContentTema($id_tema) {
+            $condition = "id =" . "'" . $id_tema . "'";
+            $this->db->select('contenido');
+            $this->db->from('tema');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            return $this->db->get()->result_array();
+        }
     }
 ?>

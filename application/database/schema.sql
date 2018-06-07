@@ -11,6 +11,7 @@ CREATE TABLE `rama` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `nombre` VARCHAR(100) NOT NULL,
     `contenido` TEXT NOT NULL,
+    UNIQUE (`nombre`),
     PRIMARY KEY (`id`)
 )CHARSET=utf8;
 
@@ -45,6 +46,7 @@ CREATE TABLE `usuario` (
     `email` VARCHAR(255),
     `password` VARCHAR(255) NOT NULL,
     `admin` TINYINT(1) NOT NULL,
+    UNIQUE (`usuario`),
     PRIMARY KEY (`id`)
     
 );

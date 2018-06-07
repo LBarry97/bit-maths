@@ -58,6 +58,9 @@ $(document).ready(function(){
             }
         });
 
+        // Reset temas
+        $("#accordion").text("");
+
         $.getJSON(url+"/index.php/manage_data/temas_rama/"+indice, function(data){
             makeTemas(data);
         });
@@ -69,6 +72,42 @@ $(document).ready(function(){
     }
 
     function makeTemas(content){
-        console.log(content.length)
+        $.each(content, function(i, e){
+            $.getJSON(url+"/index.php/manage_data/tema_content/"+e, function(data){
+                $("#accordion").append(
+                    $("<div>").addClass("card").append(
+                        $("<div>").addClass("card-header").append(
+                            $("<a>").addClass("card-link").attr("data-toggle", "collapse").
+                            attr("href","#tema"+(i+1)).text("Tema "+(i+1))
+                        ),
+                        $("<div>").addClass("collapse").attr("id","tema"+(i+1)).attr("data-parent", "#accordion").
+                        append(
+                            $("<div>").addClass("card-body").append(
+                                $("<label>").text("Contenido:"),
+                                $("<br>"),
+                                $("<div>").append(
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H1"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H2"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H3"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H4"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("HR"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("P"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("BR"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("DIV"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("UL"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("OL"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("LI"),
+                                    $("<button>").addClass("pl-3 pr-3 btn btn-secondary").attr("type","button").text("IMG"),
+                                    $("<button>").addClass("pl-3 btn btn-secondary").attr("type","button").text("BUTTON LINK"),
+                                    $("<button>").addClass("pl-3 pr-4 btn btn-secondary").attr("type","button").text("STRONG")
+                                ).addClass("btn-group"),
+                                $("<textarea>").addClass("form-control").attr("rows","10").attr("name","tema"+(i+1)).
+                                text(data[0].descripcion),
+                            )
+                        )
+                    )
+                );
+            });
+        });
     }
 });
