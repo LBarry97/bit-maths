@@ -27,6 +27,54 @@ $(document).ready(function(){
         )
     );
 
+    $('body').on('click', '.close', function() {
+        $(this).parent().parent().remove();
+    });
+
+    $("#nuevo-tema").click(function(){
+        nuevoTema();
+    });
+
+    function nuevoTema(){
+        var numTemasExist = $("#accordion").children().length;
+        var newTema = numTemasExist + 1; 
+        
+        $("#accordion").append(
+            $("<div>").addClass("card").append(
+                $("<div>").addClass("card-header").append(
+                    $("<a>").addClass("card-link").attr("data-toggle", "collapse").
+                    attr("href","#tema"+newTema).text("Tema "+newTema),
+                    $("<i>").addClass("close").attr("data-tema",newTema).attr("aria-label","Close").
+                    append($("<span>").attr("aria-hidden","true").html("&times;"))
+                ),
+                $("<div>").addClass("collapse").attr("id","tema"+newTema).attr("data-parent", "#accordion").
+                append(
+                    $("<div>").addClass("card-body").append(
+                        $("<label>").text("Contenido:"),
+                        $("<br>"),
+                        $("<div>").append(
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h1></h1>").text("H1"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h2></h2>").text("H2"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h3></h3>").text("H3"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h4></h4>").text("H4"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<hr>").text("HR"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<p></p>").text("P"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<br>").text("BR"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<div></div>").text("DIV"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<ul></ul>").text("UL"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<ol></ol>").text("OL"),
+                            $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<li></li>").text("LI"),
+                            $("<button>").addClass("pl-3 pr-3 btn btn-secondary helper").attr("type","button").attr("data-help","<img src='' alt=''>").text("IMG"),
+                            $("<button>").addClass("pl-3 btn btn-secondary helper").attr("type","button").attr("data-help","<a href=''></a>").text("BUTTON LINK"),
+                            $("<button>").addClass("pl-3 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<strong></strong>").text("STRONG")
+                        ).addClass("btn-group"),
+                        $("<textarea>").addClass("form-control").attr("rows","10").attr("name","tema"+newTema),
+                    )
+                )
+            )
+        );
+    }
+
     $("#navbar_admin .navbar-nav li").click(function(){
         $(this).siblings().removeClass("active");
         $(this).addClass("active");
@@ -86,20 +134,20 @@ $(document).ready(function(){
                                 $("<label>").text("Contenido:"),
                                 $("<br>"),
                                 $("<div>").append(
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H1"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H2"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H3"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("H4"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("HR"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("P"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("BR"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("DIV"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("UL"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("OL"),
-                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary").attr("type","button").text("LI"),
-                                    $("<button>").addClass("pl-3 pr-3 btn btn-secondary").attr("type","button").text("IMG"),
-                                    $("<button>").addClass("pl-3 btn btn-secondary").attr("type","button").text("BUTTON LINK"),
-                                    $("<button>").addClass("pl-3 pr-4 btn btn-secondary").attr("type","button").text("STRONG")
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h1></h1>").text("H1"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h2></h2>").text("H2"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h3></h3>").text("H3"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<h4></h4>").text("H4"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<hr>").text("HR"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<p></p>").text("P"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<br>").text("BR"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<div></div>").text("DIV"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<ul></ul>").text("UL"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<ol></ol>").text("OL"),
+                                    $("<button>").addClass("pl-4 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<li></li>").text("LI"),
+                                    $("<button>").addClass("pl-3 pr-3 btn btn-secondary helper").attr("type","button").attr("data-help","<img src='' alt=''>").text("IMG"),
+                                    $("<button>").addClass("pl-3 btn btn-secondary helper").attr("type","button").attr("data-help","<a href=''></a>").text("BUTTON LINK"),
+                                    $("<button>").addClass("pl-3 pr-4 btn btn-secondary helper").attr("type","button").attr("data-help","<strong></strong>").text("STRONG")
                                 ).addClass("btn-group"),
                                 $("<textarea>").addClass("form-control").attr("rows","10").attr("name","tema"+(i+1)).
                                 text(data[0].descripcion),
@@ -109,5 +157,50 @@ $(document).ready(function(){
                 );
             });
         });
+    }
+
+    // $('body').on('click', '.helper', function() {
+    //     $(this).scrollPos
+    //     insertAtCaret(areaId, text)
+    // });
+
+    // Funcionamieto del helper (codigo de internet)
+    function insertAtCaret(areaId, text) {
+        var txtarea = document.getElementById(areaId);
+        if (!txtarea) {
+            return;
+        }
+
+        var scrollPos = txtarea.scrollTop;
+        var strPos = 0;
+        var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ?
+            "ff" : (document.selection ? "ie" : false));
+        if (br == "ie") {
+            txtarea.focus();
+            var range = document.selection.createRange();
+            range.moveStart('character', -txtarea.value.length);
+            strPos = range.text.length;
+        } else if (br == "ff") {
+            strPos = txtarea.selectionStart;
+        }
+
+        var front = (txtarea.value).substring(0, strPos);
+        var back = (txtarea.value).substring(strPos, txtarea.value.length);
+        txtarea.value = front + text + back;
+        strPos = strPos + text.length;
+        if (br == "ie") {
+            txtarea.focus();
+            var ieRange = document.selection.createRange();
+            ieRange.moveStart('character', -txtarea.value.length);
+            ieRange.moveStart('character', strPos);
+            ieRange.moveEnd('character', 0);
+            ieRange.select();
+        } else if (br == "ff") {
+            txtarea.selectionStart = strPos;
+            txtarea.selectionEnd = strPos;
+            txtarea.focus();
+        }
+
+        txtarea.scrollTop = scrollPos;
     }
 });
