@@ -56,7 +56,7 @@
 
         public function borrar_user($usuario){
             $this->admin_model->borrar_usuario($usuario);
-            redirect();
+            redirect('admin/usuarios');
         }
     }
 ?>
