@@ -12,7 +12,7 @@ CREATE TABLE `rama` (
     `nombre` VARCHAR(100) NOT NULL,
     `contenido` TEXT NOT NULL,
     PRIMARY KEY (`id`)
-);
+)CHARSET=utf8;
 
 /**
 * Tabla del temario de las diferentes ramas
@@ -21,7 +21,7 @@ CREATE TABLE `tema` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `contenido` TEXT NOT NULL,
     PRIMARY KEY (`id`)
-);
+)CHARSET=utf8;
 
 /**
 * Tabla de relacion entre las ramas y los temarios

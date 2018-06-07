@@ -2,7 +2,7 @@
     if (isset($this->session->userdata['logeado']) && $this->session->userdata['logeado']['admin'] == "1") {
         $usuario = ($this->session->userdata['logeado']['usuario']);
     } else {
-        header("location: login");
+        header("location: ../autenticacion_usuario/login");
     }
 ?>
 <br>
@@ -17,47 +17,36 @@
             <br>
             <br>
             <div>
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#home">Tema 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">Tema 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">Tema 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#">+</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content">
-                    <div id="home" class="container tab-pane active"><br>
-                        <label for="contentRama">Contenido:</label>
-                        <br>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-secondary">H1</button>
-                            <button type="button" class="btn btn-secondary">H2</button>
-                            <button type="button" class="btn btn-secondary">H3</button>
-                            <button type="button" class="btn btn-secondary">P</button>
-                            <button type="button" class="btn btn-secondary">BR</button>
-                            <button type="button" class="btn btn-secondary">DIV</button>
-                            <button type="button" class="btn btn-secondary">UL</button>
-                            <button type="button" class="btn btn-secondary">LI</button>
-                            <button type="button" class="btn btn-secondary">IMG</button>
-                            <button type="button" class="btn btn-secondary">BUTTON LINK</button>
-                            <button type="button" class="btn btn-secondary">STRONG</button>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#tema1">
+                            Tema 1
+                            </a>
                         </div>
-                        <textarea class="form-control" id="contentRama" rows="10" heig></textarea>
-                    </div>
-                    <div id="menu1" class="container tab-pane fade"><br>
-                        <label for="contentRama">Contenido:</label>
-                        <textarea class="form-control" id="contentRama" rows="10"></textarea>
-                    </div>
-                    <div id="menu2" class="container tab-pane fade"><br>
-                        <label for="contentRama">Contenido:</label>
-                        <textarea class="form-control" id="contentRama" rows="10"></textarea>
+                        <div id="tema1" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <label for="contentRama">Contenido:</label>
+                                <br>
+                                <div class="btn-group">
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">H1</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">H2</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">H3</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">H4</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">HR</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">P</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">BR</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">DIV</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">UL</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">OL</button>
+                                    <button type="button" class="pl-4 pr-4 btn btn-secondary">LI</button>
+                                    <button type="button" class="pl-3 pr-3 btn btn-secondary">IMG</button>
+                                    <button type="button" class="btn btn-secondary">BUTTON LINK</button>
+                                    <button type="button" class="pl-3 pr-3 btn btn-secondary">STRONG</button>
+                                </div>
+                                <textarea class="form-control" id="contentRama" rows="10" heig></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

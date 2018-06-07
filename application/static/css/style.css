@@ -84,9 +84,18 @@ body {
   border-bottom: 0;
   background-color: #343a40;
   color: white;
+  height: 55px;
+  line-height: 50px;
+  padding-left: 10px;
 }
 #nav-home .nav-item:last-child {
   border-bottom: black 1px solid;
+}
+#nav-home .list-group > .list-group-item:hover {
+  background-color: #6c757d;
+}
+#aula-formacion {
+  background-color: #edd9c0;
 }
 #navbar_admin {
   padding: 0;
