@@ -11,6 +11,7 @@
             $this->load->model('admin_model');
 
             // Cargar librerias de ayuda
+            $this->load->helper('form');
             $this->load->helper('html');
             $this->load->helper('url');
         }
@@ -51,6 +52,11 @@
                 default:
                     $this->load->view('No se encontro la pagina :(');
             }
+        }
+
+        public function borrar_user($usuario){
+            $this->admin_model->borrar_usuario($usuario);
+            redirect();
         }
     }
 ?>

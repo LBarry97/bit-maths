@@ -9,5 +9,11 @@
             $this->db->order_by('nombre', 'DESC');
             return $this->db->get()->result_array();
         }
+
+        // Borrar usuario
+        public function borrar_usuario($usuario){
+            $this->db->where('usuario', $usuario);
+            $this->db->delete('usuario');
+        }
     }
 ?>

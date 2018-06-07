@@ -84,12 +84,33 @@ body {
   border-bottom: 0;
   background-color: #343a40;
   color: white;
+  height: 55px;
+  line-height: 50px;
+  padding-left: 10px;
 }
 #nav-home .nav-item:last-child {
   border-bottom: black 1px solid;
 }
-#admin-navbar {
-  margin-bottom: 50px;
+#nav-home .list-group > .list-group-item:hover {
+  background-color: #6c757d;
+}
+.wrapper.style {
+  background-color: #edd9c0;
+}
+#navbar_admin {
+  padding: 0;
+}
+#navbar_admin .active {
+  background-color: #4CAF50;
+  color: white;
+}
+#navbar_admin .active:hover {
+  opacity: 0.7;
+}
+#btn-form-admin .btn {
+  width: 200px;
+  height: 55px;
+  line-height: 40px;
 }
 .style-card {
   margin: 0;
@@ -156,8 +177,9 @@ body {
 }
 #logout {
   position: absolute;
-  right: 10px;
-  padding: 0;
+  right: 0;
+  top: 0;
+  padding: 6px;
 }
 a {
   text-decoration: none;

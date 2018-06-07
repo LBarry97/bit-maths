@@ -11,8 +11,9 @@ CREATE TABLE `rama` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `nombre` VARCHAR(100) NOT NULL,
     `contenido` TEXT NOT NULL,
+    UNIQUE (`nombre`),
     PRIMARY KEY (`id`)
-);
+)CHARSET=utf8;
 
 /**
 * Tabla del temario de las diferentes ramas
@@ -21,7 +22,7 @@ CREATE TABLE `tema` (
     `id` INT(11) NOT NULL AUTO_INCREMENT,
     `contenido` TEXT NOT NULL,
     PRIMARY KEY (`id`)
-);
+)CHARSET=utf8;
 
 /**
 * Tabla de relacion entre las ramas y los temarios
@@ -45,6 +46,7 @@ CREATE TABLE `usuario` (
     `email` VARCHAR(255),
     `password` VARCHAR(255) NOT NULL,
     `admin` TINYINT(1) NOT NULL,
+    UNIQUE (`usuario`),
     PRIMARY KEY (`id`)
     
 );

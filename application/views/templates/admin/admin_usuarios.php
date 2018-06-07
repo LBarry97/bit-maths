@@ -15,6 +15,7 @@
                 <th>Nombre</th>
                 <th>Usuario</th>
                 <th>Email</th>
+                <th>Accion</th>
             </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                     <td><?=$tabla_usuarios[$i]['nombre']?></td>
                     <td><?=$tabla_usuarios[$i]['usuario']?></td>
                     <td><?=$tabla_usuarios[$i]['email']?></td>
+                    <td class="text-center"><a id="btn-cancelar" class="btn btn-danger" href="<?=site_url('admin/borrar_user/'.$tabla_usuarios[$i]['usuario'])?>">Borrar</a></td>
                 </tr>
                 <?php } ?>
             </tbody>

@@ -13,17 +13,16 @@
         <body>
                 <div class="wrapper">
                         <nav id="navbar_admin" class="navbar navbar-expand-md bg-dark navbar-dark">
-                                <a class="navbar-brand" href="<?=site_url('autenticacion_usuario/admin')?>">Admin Home</a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                                 <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                                 <ul class="navbar-nav">
-                                        <li class="nav-item hidden">
-                                        <a class="nav-link" href="#">Relleno</a>
+                                        <li class="nav-item btn btn-dark active">
+                                                <a class="nav-link" href="<?=site_url('autenticacion_usuario/admin')?>">Admin Home</a>
                                         </li>
                                         <li id="logout" class="nav-item btn btn-danger">
-                                        <a class="nav-link" href="logout">Logout</a>
+                                                <a class="nav-link" href="<?=site_url('autenticacion_usuario/logout')?>">Logout</a>
                                         </li>    
                                 </ul>
                                 </div>  
