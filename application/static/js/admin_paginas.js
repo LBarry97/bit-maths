@@ -159,14 +159,14 @@ $(document).ready(function(){
         });
     }
 
-    // $('body').on('click', '.helper', function() {
-    //     $(this).scrollPos
-    //     insertAtCaret(areaId, text)
-    // });
+    $('body').on('click', '.helper', function() {
+        var txtarea = $(this).parent().siblings()[2];
+        console.log(txtarea);
+        insertAtCaret(txtarea, $(this).attr("data-help"));
+    });
 
     // Funcionamieto del helper (codigo de internet)
-    function insertAtCaret(areaId, text) {
-        var txtarea = document.getElementById(areaId);
+    function insertAtCaret(txtarea, text) {
         if (!txtarea) {
             return;
         }
