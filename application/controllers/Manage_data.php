@@ -6,6 +6,9 @@
 
             // Cargar la libreria de session
             $this->load->library('session');
+
+            // Cargar las librerias form validation
+            $this->load->library('form_validation');
             
             // Cargar el modelo Admin_model
             $this->load->model('manage_data_model');
@@ -13,12 +16,11 @@
             // Cargar librerias de ayuda
             $this->load->helper('html');
             $this->load->helper('url');
-
-            header('Content-Type: application/json');
         }
 
         // Devolver las ramas en formato JSON
         public function rama_content() {
+            header('Content-Type: application/json');
             $result = $this->manage_data_model->getContentRamas();
             $lenResult = count($result);
             $responseJSON = "";
@@ -40,6 +42,7 @@
 
         // Devolver una rama en formato JSON
         public function rama($id_rama) {
+            header('Content-Type: application/json');
             $result = $this->manage_data_model->getContentRama($id_rama);
             $lenResult = count($result);
             $responseJSON = "";
@@ -61,6 +64,7 @@
 
         // Devolver una lista de id de los temas de la rama indicad por parametro
         public function temas_rama($id_rama) {
+            header('Content-Type: application/json');
             $result = $this->manage_data_model->getTemasRama($id_rama);
             $lenResult = count($result);
             $listIdTemas = "";
@@ -81,6 +85,7 @@
 
         // Devolver el contenido de un tema
         public function tema_content($id_tema) {
+            header('Content-Type: application/json');
             $result = $this->manage_data_model->getContentTema($id_tema);
             $lenResult = count($result);
             $responseJSON = "";
@@ -91,6 +96,46 @@
 
             $responseJSON = "[".$responseJSON."]";
             echo $responseJSON;
+        }
+
+        // Guarda las modificaciones del contenido de formacion
+        public function guardar() {
+            // Validar la entrada de usuario
+            $this->form_validation->set_rules('content_rama', 'Rama', 'trim|required');
+
+            if ($this->form_validation->run() == FALSE) {
+                redirect('autenticacion_usuario/registro');
+            } else {
+                $result = $this->manage_data_model->nombreRama($this->input->post('id_rama'));
+
+                $dataRama = array(
+                    'id' => $this->input->post('id_rama'),
+                    'nombre' => $result[0]['nombre'],
+                    'contenido' => $this->input->post('content_rama')
+                );
+
+                $resultRama = $this->manage_data_model->guardarRama($dataRama);
+
+                if ($resultRama == TRUE) {
+                    $data = array(
+                        'sms_info' => 'Se guardaron los datos correctamente!',
+                        'title' => ucfirst('Bit-Maths Admin | Paginas'),
+                    );
+                } else {
+                    $data = array(
+                        'sms_info' => 'Ha habido un error!',
+                        'title' => ucfirst('Bit-Maths Admin | Paginas'),
+                    );
+                }
+                
+                $this->load->view('templates/admin/header',$data);
+                $this->load->view('templates/admin/admin_paginas',$data);
+                $this->load->view('templates/footer');
+
+                // $posJSON = json_encode($_POST);
+
+                // echo $posJSON;
+            }
         }
     }
 ?>

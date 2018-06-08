@@ -9,11 +9,17 @@
 <br>
     <div class="container">
         <?php
-            echo form_open('autenticacion_usuario/nuevo_registro');
+            echo "<div class='error_sms'>";
+            if (isset($sms_info)) {
+                echo $sms_info;
+            }
+            echo "</div>";
+            echo"<br/>";
+            echo form_open('manage_data/guardar');
         ?>
         <div class="form-group">
             <label for="contentRama">Descripción Rama:</label>
-            <textarea class="form-control" id="contentRama" rows="3"></textarea>
+            <textarea class="form-control" id="contentRama" rows="3" name="content_rama"></textarea>
             <br>
             <br>
             <div>
