@@ -36,7 +36,7 @@ $(document).ready(function(){
     });
 
     function nuevoTema(){
-        var numTemasExist = $("#accordion").children().length;
+        var numTemasExist = $("#accordion").find(".card").length;
         var newTema = numTemasExist + 1; 
         
         $("#accordion").append(
@@ -102,6 +102,12 @@ $(document).ready(function(){
             if(typeof data[0].titulo == "undefined"){
                 $(".container").prepend($("<p>").text(data[0].error).addClass("error_sms"));
             }else{
+                $("#accordion").append(
+                    $("<input>").attr("type","hidden").attr("name","id_rama").
+                    attr("value",indice),
+                    $("<input>").attr("type","hidden").attr("name","imagen_rama").
+                    attr("value",data[0].imagen)
+                );
                 ramasPrint(data);
             }
         });
@@ -110,8 +116,6 @@ $(document).ready(function(){
         $("#accordion").text("");
 
         $.getJSON(url+"/index.php/manage_data/temas_rama/"+indice, function(data){
-            $("#accordion").append($("<input>").attr("type","hidden").attr("name","id_rama").
-            attr("value",indice));
             makeTemas(data[0].temas.split(","));
         });
     }

@@ -67,14 +67,40 @@
             return $this->db->get()->result_array();
         }
 
-        // Coger el nombre de una rama
+        // Guardar el contenido de una rama
         public function guardarRama($content) {
             $data = array(
                 'nombre' => $content['nombre'],
-                'contenido' => '{"titulo":"'.$content['nombre'].'","descripcion":"'.$content['contenido'].'"}'
+                'contenido' => '{"titulo":"'.$content['nombre'].'","descripcion":"'.$content['contenido'].'","imagen":"'.$content['imagen'].'"}'
             );
             $this->db->where('id', $content['id']);
             return $this->db->update('rama', $data);
+        }
+
+        // Guardar el contenido de una tema
+        public function guardarTema($id_tema, $content, $id_rama) {
+            $condition = "id =" . "'" . $id_tema . "'";
+            $this->db->select('contenido');
+            $this->db->from('tema');
+            $this->db->where($condition);
+            $result = $this->db->get();
+
+            $data = array(
+                'contenido' => '{"descripcion":"'.$content['contenido'].'"}'
+            );
+
+            if( $result->num_rows() > 0 ){
+                $this->db->where('id', $id_tema);
+                return $this->db->update('tema', $data);
+            }else{
+                $query = $this->db->query('ALTER TABLE `tema` AUTO_INCREMENT = 1');
+                $this->db->insert('tema', $data);
+                $dataRama_tema = array(
+                    'id_rama' => $id_rama,
+                    'id_tema' => $id_tema
+                );
+                return $this->db->insert('rama_tema', $dataRama_tema);
+            }
         }
     }
 ?>

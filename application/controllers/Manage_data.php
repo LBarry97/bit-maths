@@ -104,19 +104,35 @@
             $this->form_validation->set_rules('content_rama', 'Rama', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
-                redirect('autenticacion_usuario/registro');
+                $data = array(
+                    'sms_info' => 'Error: El contenido de la rama es obligatorio!',
+                    'title' => ucfirst('Bit-Maths Admin | Paginas'),
+                );
+                $this->load->view('templates/admin/header',$data);
+                $this->load->view('templates/admin/admin_paginas',$data);
+                $this->load->view('templates/footer');
             } else {
                 $resultNombre = $this->manage_data_model->nombreRama($this->input->post('id_rama'));
-
+                
                 $dataRama = array(
                     'id' => $this->input->post('id_rama'),
                     'nombre' => $resultNombre[0]['nombre'],
-                    'contenido' => $this->input->post('content_rama')
+                    'contenido' => $this->input->post('content_rama'),
+                    'imagen' => $this->input->post('imagen_rama')
                 );
 
                 $resultRama = $this->manage_data_model->guardarRama($dataRama);
+                $temaCount = 1;
+                
+                while($this->input->post('tema'.$temaCount)){
+                    $dataTema = array(
+                        'contenido' => $this->input->post('tema'.$temaCount)
+                    );
+                    $resultTema = $this->manage_data_model->guardarTema($temaCount, $dataTema, $this->input->post('id_rama'));
+                    $temaCount++;
+                }
 
-                if ($resultRama == TRUE) {
+                if ($resultRama == TRUE && $resultTema == TRUE) {
                     $data = array(
                         'sms_info' => 'Se guardaron los datos correctamente!',
                         'title' => ucfirst('Bit-Maths Admin | Paginas'),
@@ -131,10 +147,6 @@
                 $this->load->view('templates/admin/header',$data);
                 $this->load->view('templates/admin/admin_paginas',$data);
                 $this->load->view('templates/footer');
-
-                // $posJSON = json_encode($_POST);
-
-                // echo $posJSON;
             }
         }
     }
