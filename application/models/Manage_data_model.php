@@ -37,7 +37,7 @@
             return $this->db->get()->result_array();
         }
 
-        // Guardat las modificaciones del contenido de la rama
+        // Guardar las modificaciones del contenido de la rama
         public function save($id_tema) {
             $condition = "id =" . "'" . $id_tema . "'";
             $this->db->select('contenido');
@@ -57,7 +57,7 @@
             return $this->db->get()->result_array();
         }
 
-        // Coger el nombre de una rama
+        // Coger el contenido de una rama
         public function contenidoRama($id_rama) {
             $condition = "id =" . "'" . $id_rama . "'";
             $this->db->select('contenido');
