@@ -36,5 +36,15 @@
             $this->db->limit(1);
             return $this->db->get()->result_array();
         }
+
+        // Coger el nombre de una rama
+        public function nombreRama($id){
+            $condition = "id =" . "'" . $id . "'";
+            $this->db->select('nombre');
+            $this->db->from('rama');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            return $this->db->get()->result_array();
+        }
     }
 ?>

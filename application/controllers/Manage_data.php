@@ -6,7 +6,7 @@
 
             // Cargar la libreria de session
             $this->load->library('session');
-            
+
             // Cargar el modelo Admin_model
             $this->load->model('manage_data_model');
 

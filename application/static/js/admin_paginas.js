@@ -110,6 +110,8 @@ $(document).ready(function(){
         $("#accordion").text("");
 
         $.getJSON(url+"/index.php/manage_data/temas_rama/"+indice, function(data){
+            $("#accordion").append($("<input>").attr("type","hidden").
+            attr("name","id_rama").attr("value",indice));
             makeTemas(data[0].temas.split(","));
         });
     }
