@@ -27,7 +27,7 @@
             $this->load->view('templates/footer');
         }
 
-        // Mostrar la pagina usuarios
+        // Mostrar la pagina de administracion
         public function paginas() {
             $data = array(
                 'title' => ucfirst('Bit-Maths Admin | Paginas'),
@@ -35,23 +35,6 @@
             $this->load->view('templates/admin/header',$data);
             $this->load->view('templates/admin/admin_paginas');
             $this->load->view('templates/footer');
-        }
-
-        // Mostrar la pagina usuarios
-        public function pagina($pagina) {
-            switch($pagina){
-                case 'home_publica':
-                    $data = array(
-                        'title' => ucfirst('Pagina | Home Publica'),
-                    );
-                    $this->load->view('templates/header',$data);
-                    $this->load->view('templates/admin/editar_pagina');
-                    $this->load->view('templates/footer');
-                    break;
-
-                default:
-                    $this->load->view('No se encontro la pagina :(');
-            }
         }
 
         // Borra un usuario de la base de datos
