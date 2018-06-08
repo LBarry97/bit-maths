@@ -54,9 +54,10 @@
             }
         }
 
+        // Borra un usuario de la base de datos
         public function borrar_user($usuario){
             $this->admin_model->borrar_usuario($usuario);
-            redirect();
+            redirect('admin/usuarios');
         }
     }
 ?>
