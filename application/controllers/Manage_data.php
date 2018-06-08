@@ -106,11 +106,11 @@
             if ($this->form_validation->run() == FALSE) {
                 redirect('autenticacion_usuario/registro');
             } else {
-                $result = $this->manage_data_model->nombreRama($this->input->post('id_rama'));
+                $resultNombre = $this->manage_data_model->nombreRama($this->input->post('id_rama'));
 
                 $dataRama = array(
                     'id' => $this->input->post('id_rama'),
-                    'nombre' => $result[0]['nombre'],
+                    'nombre' => $resultNombre[0]['nombre'],
                     'contenido' => $this->input->post('content_rama')
                 );
 

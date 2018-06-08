@@ -58,6 +58,16 @@
         }
 
         // Coger el nombre de una rama
+        public function contenidoRama($id_rama) {
+            $condition = "id =" . "'" . $id_rama . "'";
+            $this->db->select('contenido');
+            $this->db->from('rama');
+            $this->db->where($condition);
+            $this->db->limit(1);
+            return $this->db->get()->result_array();
+        }
+
+        // Coger el nombre de una rama
         public function guardarRama($content) {
             $data = array(
                 'nombre' => $content['nombre'],
