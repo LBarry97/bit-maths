@@ -1,0 +1,35 @@
+<?php
+    if (isset($this->session->userdata['logeado']) && $this->session->userdata['logeado']['admin'] == "1") {
+        $usuario = ($this->session->userdata['logeado']['usuario']);
+    } else {
+        header("location: ../autenticacion_usuario/login");
+    }
+?>
+<br>
+<br>
+    <div class="container">
+        <h3>Tabla usuarios:</h3>        
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Accion</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php
+                $len_usuarios = count($tabla_usuarios);
+                for ($i = 0; $i < $len_usuarios; $i++) {
+                ?>
+                <tr>
+                    <td><?=$tabla_usuarios[$i]['nombre']?></td>
+                    <td><?=$tabla_usuarios[$i]['usuario']?></td>
+                    <td><?=$tabla_usuarios[$i]['email']?></td>
+                    <td class="text-center"><a id="btn-cancelar" class="btn btn-danger" href="<?=site_url('admin/borrar_user/'.$tabla_usuarios[$i]['usuario'])?>">Borrar</a></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
